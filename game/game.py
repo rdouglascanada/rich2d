@@ -22,7 +22,10 @@ class Game:
                     running = False
             screen.fill(config.get_background_colour())
             pygame.display.flip()
-            clock.tick(60)
+            clock.tick(config.get_frame_rate())
 
         pygame.quit()
         return
+
+    def get_config(self):
+        return self._config
