@@ -16,6 +16,8 @@ class Game:
         clock = pygame.time.Clock()
         running = True
 
+        pygame.display.set_caption(config.get_window_title())
+
         while running:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
