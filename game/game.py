@@ -1,18 +1,22 @@
 import pygame
 from .game_config import GameConfig
+from .game_model import SimpleGameModel
 
 
 class Game:
-    def __init__(self, config=None, sprites=[]):
+    def __init__(self, config=None, model=None):
         if config is None:
             config = GameConfig()
+        if model is None:
+            model = SimpleGameModel()
         self._config = config
-        self._sprites = tuple(sprites)
+        self._model = model
         return
 
     def start(self):
         pygame.init()
         config = self._config
+        model = self._model
         screen = pygame.display.set_mode((config.get_window_width(), config.get_window_height()))
         clock = pygame.time.Clock()
         running = True
@@ -25,7 +29,7 @@ class Game:
                 if event.type == pygame.QUIT:
                     running = False
             screen.fill(config.get_background_colour())
-            for sprite in self._sprites:
+            for sprite in model.get_sprites():
                 sprite.draw(screen)
             pygame.display.flip()
             clock.tick(config.get_frame_rate())

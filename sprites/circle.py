@@ -2,18 +2,18 @@ import pygame
 from .sprite import Sprite
 
 
-class Rectangle(Sprite):
+class Circle(Sprite):
     DEFAULT_COLOUR = pygame.Color("black")
 
     def __init__(self, rect=None, colour=None):
         super().__init__(rect=rect)
         if colour is None:
-            colour = Rectangle.DEFAULT_COLOUR
+            colour = Circle.DEFAULT_COLOUR
         self._colour = pygame.Color(colour)
         return
 
     def draw(self, screen):
-        pygame.draw.rect(screen, self._colour, self._rect)
+        pygame.draw.ellipse(screen, self._colour, self._rect)
         return
 
     def get_colour(self):
