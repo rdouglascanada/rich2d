@@ -17,6 +17,9 @@ class Game:
         running = True
 
         pygame.display.set_caption(config.get_window_title())
+        if config.get_window_icon() is not None:
+            icon = pygame.image.load(config.get_window_icon())
+            pygame.display.set_icon(icon)
 
         while running:
             for event in pygame.event.get():
