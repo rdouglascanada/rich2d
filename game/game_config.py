@@ -4,7 +4,7 @@ import pygame
 class GameConfig:
     DEFAULT_BACKGROUND_COLOUR = pygame.Color("black")
     DEFAULT_FRAME_RATE = 60
-    DEFAULT_WINDOW_ICON = None
+    DEFAULT_WINDOW_ICON = pygame.Surface((0, 0))
     DEFAULT_WINDOW_TITLE = "Rich2D Game"
     DEFAULT_WINDOW_WIDTH = 800
     DEFAULT_WINDOW_HEIGHT = 600
@@ -17,6 +17,8 @@ class GameConfig:
             frame_rate = GameConfig.DEFAULT_FRAME_RATE
         if window_icon is None:
             window_icon = GameConfig.DEFAULT_WINDOW_ICON
+        else:
+            window_icon = pygame.image.load(window_icon)
         if window_title is None:
             window_title = GameConfig.DEFAULT_WINDOW_TITLE
         if window_width is None:
