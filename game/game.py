@@ -3,10 +3,11 @@ from .game_config import GameConfig
 
 
 class Game:
-    def __init__(self, config=None):
+    def __init__(self, config=None, sprites=[]):
         if config is None:
             config = GameConfig()
         self._config = config
+        self._sprites = tuple(sprites)
         return
 
     def start(self):
@@ -24,6 +25,8 @@ class Game:
                 if event.type == pygame.QUIT:
                     running = False
             screen.fill(config.get_background_colour())
+            for sprite in self._sprites:
+                sprite.draw(screen)
             pygame.display.flip()
             clock.tick(config.get_frame_rate())
 
@@ -32,3 +35,6 @@ class Game:
 
     def get_config(self):
         return self._config
+
+    def get_sprites(self):
+        return self._sprites
