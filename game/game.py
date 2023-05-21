@@ -1,6 +1,7 @@
 import pygame
 from .game_config import GameConfig
 
+
 class Game:
     def __init__(self, config=None):
         if config is None:
@@ -11,7 +12,7 @@ class Game:
     def start(self):
         pygame.init()
         config = self._config
-        screen = pygame.display.set_mode((800, 600))
+        screen = pygame.display.set_mode((config.get_window_width(), config.get_window_height()))
         clock = pygame.time.Clock()
         running = True
 
