@@ -29,6 +29,8 @@ class Game:
                 if event.type == pygame.QUIT:
                     running = False
             screen.fill(config.get_background_colour())
+            for element in model.get_elements():
+                element.update()
             for sprite in model.get_sprites():
                 sprite.draw(screen)
             pygame.display.flip()
