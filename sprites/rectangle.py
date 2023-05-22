@@ -18,3 +18,7 @@ class Rectangle(Sprite):
 
     def get_colour(self):
         return self._colour
+
+    def set_colour(self, colour):
+        self._colour = pygame.Color(colour)
+        return

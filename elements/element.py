@@ -1,7 +1,8 @@
-from abc import ABC, abstractmethod
+class Element:
+    def __init__(self, on_update=lambda: None):
+        self._on_update = on_update
+        return
 
-
-class Element(ABC):
-    @abstractmethod
     def update(self):
-        pass
+        self._on_update()
+        return

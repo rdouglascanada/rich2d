@@ -16,3 +16,4 @@ class Sprite(ABC):
 
     def get_rect(self):
         return self._rect
+
