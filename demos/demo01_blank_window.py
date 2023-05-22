@@ -1,5 +1,5 @@
 from game import Game
 
 simple_game = Game()
-simple_game.start()
+simple_game.run()
 

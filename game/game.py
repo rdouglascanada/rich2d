@@ -13,7 +13,7 @@ class Game:
         self._model = model
         return
 
-    def start(self):
+    def run(self):
         pygame.init()
         config = self._config
         model = self._model
@@ -36,9 +36,3 @@ class Game:
 
         pygame.quit()
         return
-
-    def get_config(self):
-        return self._config
-
-    def get_sprites(self):
-        return self._sprites

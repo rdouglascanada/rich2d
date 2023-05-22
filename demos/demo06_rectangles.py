@@ -8,4 +8,4 @@ red_rectangle = Rectangle(rect=(400, 100, 150, 300), colour="red")
 rectangles = [background_rectangle, green_square, red_rectangle]
 rectangle_game_model = SimpleGameModel(sprites=rectangles)
 rectangle_game = Game(model=rectangle_game_model)
-rectangle_game.start()
+rectangle_game.run()

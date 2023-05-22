@@ -7,4 +7,4 @@ blue_ellipse = Circle(rect=(100, 325, 450, 200), colour="blue")
 shapes = [green_circle, red_oval, blue_ellipse]
 shape_game_model = SimpleGameModel(sprites=shapes)
 shape_game = Game(model=shape_game_model)
-shape_game.start()
+shape_game.run()

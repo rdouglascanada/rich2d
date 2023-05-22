@@ -12,4 +12,4 @@ small_italic_text = Text(rect=(100, 275, 300, 50), text="Some small italic text"
 text = [white_text, arial_text, big_bold_arial_text, small_italic_text]
 text_game_model = SimpleGameModel(sprites=text)
 text_game = Game(model=text_game_model)
-text_game.start()
+text_game.run()
