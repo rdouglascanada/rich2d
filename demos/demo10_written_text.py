@@ -1,4 +1,5 @@
-from game import Game, SimpleGameModel
+from game import Game
+from models import Model
 from elements import WrittenText
 from sprites import Text
 
@@ -12,6 +13,6 @@ slower_written_text_model = WrittenText(text_sprite=slower_written_text, write_i
 text = [written_text, faster_written_text, slower_written_text]
 text_models = [written_text_model, faster_written_text_model, slower_written_text_model]
 
-text_game_model = SimpleGameModel(elements=text_models, sprites=text)
+text_game_model = Model(elements=text_models, sprites=text)
 text_game = Game(model=text_game_model)
 text_game.run()

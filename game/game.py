@@ -1,6 +1,6 @@
 import pygame
 from .game_config import GameConfig
-from .game_model import SimpleGameModel
+from models import Model
 
 
 class Game:
@@ -8,7 +8,7 @@ class Game:
         if config is None:
             config = GameConfig()
         if model is None:
-            model = SimpleGameModel()
+            model = Model()
         self._config = config
         self._model = model
         return

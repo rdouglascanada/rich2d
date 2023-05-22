@@ -1,4 +1,5 @@
-from game import Game, SimpleGameModel
+from game import Game
+from models import Model
 from elements import FlashingText
 from sprites import Text
 
@@ -12,6 +13,6 @@ slower_flashing_text_model = FlashingText(text_sprite=slower_flashing_text, flas
 text = [flashing_text, faster_flashing_text, slower_flashing_text]
 text_models = [flashing_text_model, faster_flashing_text_model, slower_flashing_text_model]
 
-text_game_model = SimpleGameModel(elements=text_models, sprites=text)
+text_game_model = Model(elements=text_models, sprites=text)
 text_game = Game(model=text_game_model)
 text_game.run()

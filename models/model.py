@@ -1,21 +1,4 @@
-from abc import ABC, abstractmethod
-
-
-class GameModel(ABC):
-    @abstractmethod
-    def get_elements(self):
-        pass
-
-    @abstractmethod
-    def get_sprites(self):
-        pass
-
-    @abstractmethod
-    def get_handlers(self):
-        pass
-
-
-class SimpleGameModel(GameModel):
+class Model:
     def __init__(self, elements=[], sprites=[], handlers=[]):
         super().__init__()
         self._elements = tuple(elements)

@@ -1,4 +1,5 @@
-from game import Game, SimpleGameModel
+from game import Game
+from models import Model
 from sprites import Text, Rectangle
 from handlers import MouseClickHandler
 
@@ -23,8 +24,7 @@ button_handler = MouseClickHandler(rect=(300, 400, 200, 200),
                                    on_right_mouse_click=toggle_text_handler(right_text_sprite))
 button_sprite = Rectangle(rect=(325, 400, 150, 100), colour="gray")
 
-button_game_model = SimpleGameModel(sprites=[left_text_sprite, right_text_sprite, button_sprite],
-                                    handlers=[button_handler])
+button_game_model = Model(sprites=[left_text_sprite, right_text_sprite, button_sprite], handlers=[button_handler])
 button_game = Game(model=button_game_model)
 button_game.run()
 
