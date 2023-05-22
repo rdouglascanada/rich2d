@@ -26,6 +26,8 @@ class Game:
 
         while running:
             for event in pygame.event.get():
+                for handler in model.get_handlers():
+                    handler.handle_event(event)
                 if event.type == pygame.QUIT:
                     running = False
             screen.fill(config.get_background_colour())
