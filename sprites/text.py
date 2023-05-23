@@ -27,8 +27,11 @@ class Text(Sprite):
         return
 
     def draw(self, screen):
+        text_width, text_height = self._font.size(self._text)
         font_surface = self._font.render(self._text, False, self._colour)
-        screen.blit(font_surface, self.get_rect())
+        text_x = self.get_rect().x + (self.get_rect().w - text_width) / 2
+        text_y = self.get_rect().y + (self.get_rect().h - text_height) / 2
+        screen.blit(font_surface, (text_x, text_y, text_width, text_height))
         return
 
     def get_font(self):
