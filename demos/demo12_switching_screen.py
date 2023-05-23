@@ -1,36 +1,16 @@
 from game import Game, GameConfig
-from models import Model, Button, ModelGroup, ModelSwitch
+from models import Model, Button, ModelGroup, StateModel
+from state import State
 from sprites import Rectangle, Circle
 
-
-class ModelSwitchDemo(ModelSwitch):
-    def __init__(self):
-        super().__init__(current_model=None)
-        self._rectangles_model = None
-        self._circles_model = None
-        return
-
-    def switch_models(self):
-        if self.get_current_model() == self._rectangles_model:
-            self.set_current_model(self._circles_model)
-        else:
-            self.set_current_model(self._rectangles_model)
-        return
-
-    def set_rectangles_model(self, rectangles_model):
-        self._rectangles_model = rectangles_model
-        return
-
-    def set_circles_model(self, circles_model):
-        self._circles_model = circles_model
-        return
-
-
-switching_game_model = ModelSwitchDemo()
+game_state = State(value="rectangles")
 
 
 def toggle_selected_model(_):
-    switching_game_model.switch_models()
+    if game_state.get_value() == "rectangles":
+        game_state.set_value("circles")
+    else:
+        game_state.set_value("rectangles")
     return
 
 
@@ -48,12 +28,10 @@ blue_ellipse = Circle(rect=(100, 325, 450, 200), colour="blue")
 button = Button(rect=(575, 450, 150, 100), colour="gray",
                 on_left_mouse_click=toggle_selected_model)
 
-rectangles = ModelGroup(models=[Model(sprites=[rectangles_background, green_square, red_rectangle]), button])
-circles = ModelGroup(models=[Model(sprites=[circles_background, green_circle, red_oval, blue_ellipse]), button])
-switching_game_model.set_rectangles_model(rectangles)
-switching_game_model.set_circles_model(circles)
-switching_game_model.set_current_model(rectangles)
+rectangles_model = ModelGroup(models=[Model(sprites=[rectangles_background, green_square, red_rectangle]), button])
+circles_model = ModelGroup(models=[Model(sprites=[circles_background, green_circle, red_oval, blue_ellipse]), button])
+state_map = {'circles': circles_model, 'rectangles': rectangles_model}
+switching_game_model = StateModel(state=game_state, state_map=state_map)
 
 switching_game = Game(model=switching_game_model)
 switching_game.run()
-
