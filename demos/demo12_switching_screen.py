@@ -25,7 +25,7 @@ green_circle = Circle(rect=(100, 100, 200, 200), colour="green")
 red_oval = Circle(rect=(400, 100, 150, 200), colour="red")
 blue_ellipse = Circle(rect=(100, 325, 450, 200), colour="blue")
 
-button = Button(rect=(575, 450, 150, 100), colour="gray",
+button = Button(rect=(575, 450, 150, 100), text="Switch", colour="gray",
                 on_left_mouse_click=toggle_selected_model)
 
 rectangles_model = ModelGroup(models=[Model(sprites=[rectangles_background, green_square, red_rectangle]), button])
