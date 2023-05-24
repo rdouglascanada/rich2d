@@ -28,6 +28,9 @@ moving_rectangle = Rectangle(rect=(0, 0, 0, 0), colour="blue")
 moving_rectangle_element = GridElement(sprite=moving_rectangle, grid=grid,
                                        grid_tiles=(9, 9, 3, 2))
 
+rock = Rectangle(rect=(0, 0, 0, 0), colour="brown")
+rock_element = GridElement(sprite=rock, grid=grid, grid_tiles=(12, 12, 4, 3))
+
 bottom_background_rectangle = Rectangle(rect=(0, 600, 600, 100), colour="white")
 instruction_text = Text(rect=(0, 600, 600, 100), text="Move the blue rectangle using the arrow keys", colour="blue",
                         font_size=20, horizontal_alignment=Text.HorizontalAlignment.CENTRE)
@@ -37,7 +40,8 @@ def handle_up_arrow():
     grid_tiles = moving_rectangle_element.get_grid_tiles()
     grid_tiles.set_y_index(grid_tiles.get_y_index() - 1)
     boundary_tiles = top_boundary_element.get_grid_tiles()
-    if boundary_tiles.collides_with(grid_tiles):
+    rock_tiles = rock_element.get_grid_tiles()
+    if boundary_tiles.collides_with(grid_tiles) or rock_tiles.collides_with(grid_tiles):
         grid_tiles.set_y_index(grid_tiles.get_y_index() + 1)
     return
 
@@ -46,7 +50,8 @@ def handle_down_arrow():
     grid_tiles = moving_rectangle_element.get_grid_tiles()
     grid_tiles.set_y_index(grid_tiles.get_y_index() + 1)
     boundary_tiles = bottom_boundary_element.get_grid_tiles()
-    if boundary_tiles.collides_with(grid_tiles):
+    rock_tiles = rock_element.get_grid_tiles()
+    if boundary_tiles.collides_with(grid_tiles) or rock_tiles.collides_with(grid_tiles):
         grid_tiles.set_y_index(grid_tiles.get_y_index() - 1)
     return
 
@@ -55,7 +60,8 @@ def handle_left_arrow():
     grid_tiles = moving_rectangle_element.get_grid_tiles()
     grid_tiles.set_x_index(grid_tiles.get_x_index() - 1)
     boundary_tiles = left_boundary_element.get_grid_tiles()
-    if boundary_tiles.collides_with(grid_tiles):
+    rock_tiles = rock_element.get_grid_tiles()
+    if boundary_tiles.collides_with(grid_tiles) or rock_tiles.collides_with(grid_tiles):
         grid_tiles.set_x_index(grid_tiles.get_x_index() + 1)
     return
 
@@ -64,7 +70,8 @@ def handle_right_arrow():
     grid_tiles = moving_rectangle_element.get_grid_tiles()
     grid_tiles.set_x_index(grid_tiles.get_x_index() + 1)
     boundary_tiles = right_boundary_element.get_grid_tiles()
-    if boundary_tiles.collides_with(grid_tiles):
+    rock_tiles = rock_element.get_grid_tiles()
+    if boundary_tiles.collides_with(grid_tiles) or rock_tiles.collides_with(grid_tiles):
         grid_tiles.set_x_index(grid_tiles.get_x_index() - 1)
     return
 
@@ -74,9 +81,9 @@ key_pressed_map = {pygame.K_UP: handle_up_arrow, pygame.K_DOWN: handle_down_arro
 keyboard_handler = KeyboardHandler(key_pressed_map=key_pressed_map)
 
 sprites = [background_rectangle, top_boundary, left_boundary, right_boundary, bottom_boundary, moving_rectangle,
-           bottom_background_rectangle, instruction_text]
+           bottom_background_rectangle, instruction_text, rock]
 elements = [background_rectangle_element, top_boundary_element, left_boundary_element,
-            right_boundary_element, bottom_boundary_element, moving_rectangle_element]
+            right_boundary_element, bottom_boundary_element, moving_rectangle_element, rock_element]
 handlers = [keyboard_handler]
 
 grid_game_config = GameConfig(window_width=600, window_height=700)
