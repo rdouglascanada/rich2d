@@ -6,7 +6,7 @@ from sprites.shapes import Rectangle, Circle
 game_state = State(value="rectangles")
 
 
-def toggle_selected_model(_):
+def toggle_selected_model():
     if game_state.get_value() == "rectangles":
         game_state.set_value("circles")
     else:

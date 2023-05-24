@@ -2,7 +2,7 @@ import pygame
 from .model import Model
 from sprites.shapes import Rectangle
 from sprites import Text
-from handlers import MouseClickHandler
+from handlers import MouseHandler
 from elements import Element
 
 
@@ -13,7 +13,7 @@ class Button(Model):
 
     def __init__(self, rect=None, colour=None, text="", font_colour=None,
                  font=None, font_name=None, font_size=None, font_bold=True, font_italic=False,
-                 on_left_mouse_click=lambda event: None, on_right_mouse_click=lambda event: None):
+                 on_left_mouse_click=lambda: None, on_right_mouse_click=lambda: None):
         if rect is None:
             raise RuntimeError("Button rect cannot be None")
         if colour is None:
@@ -34,9 +34,9 @@ class Button(Model):
         button_text = Text(rect=self._rect, text=self._text, colour=self._font_colour,
                            font=font, font_name=font_name, font_size=font_size,
                            font_bold=font_bold, font_italic=font_italic)
-        button_handler = MouseClickHandler(rect=self._rect,
-                                           on_left_mouse_click=self._on_left_mouse_click,
-                                           on_right_mouse_click=self._on_right_mouse_click)
+        button_handler = MouseHandler(rect=self._rect,
+                                      on_left_mouse_click=self._on_left_mouse_click,
+                                      on_right_mouse_click=self._on_right_mouse_click)
 
         def sync_button_sprite_and_handler():
             button_rectangle.get_rect().update(self._rect)

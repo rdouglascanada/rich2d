@@ -1,3 +1,3 @@
 from .handler import Handler
-from .mouse_click_handler import MouseClickHandler
+from .mouse_handler import MouseHandler
 from .keyboard_handler import KeyboardHandler

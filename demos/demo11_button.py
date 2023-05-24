@@ -9,7 +9,7 @@ right_text_sprite = Text(rect=(100, 200, 300, 50), text="Some other text", colou
 def toggle_text_handler(text_sprite):
     full_text = text_sprite.get_text()
 
-    def handler(_):
+    def handler():
         if text_sprite.get_text() == "":
             text_sprite.set_text(full_text)
         else:

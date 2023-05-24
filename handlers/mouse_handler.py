@@ -2,9 +2,9 @@ import pygame
 from .handler import Handler
 
 
-class MouseClickHandler(Handler):
+class MouseHandler(Handler):
     def __init__(self, rect=None,
-                 on_left_mouse_click=lambda event: None, on_right_mouse_click=lambda event: None):
+                 on_left_mouse_click=lambda: None, on_right_mouse_click=lambda: None):
         if rect is not None:
             rect = pygame.Rect(rect)
         self._rect = rect
@@ -16,8 +16,8 @@ class MouseClickHandler(Handler):
         if event.type == pygame.MOUSEBUTTONDOWN:
             if self._rect is None or self._rect.collidepoint(event.pos):
                 if event.button == pygame.BUTTON_LEFT:
-                    self._on_left_mouse_click(event)
+                    self._on_left_mouse_click()
                 elif event.button == pygame.BUTTON_RIGHT:
-                    self._on_right_mouse_click(event)
+                    self._on_right_mouse_click()
         return
 
