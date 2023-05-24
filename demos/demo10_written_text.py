@@ -1,6 +1,6 @@
 from game import Game
 from models import Model
-from elements import WrittenText
+from elements.animated_text import WrittenText
 from sprites import Text
 
 written_text = Text(rect=(100, 100, 300, 50), text="Some written text", colour="white", font_size=32)

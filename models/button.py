@@ -1,6 +1,7 @@
 import pygame
 from .model import Model
-from sprites import Rectangle, Text
+from sprites.shapes import Rectangle
+from sprites import Text
 from handlers import MouseClickHandler
 from elements import Element
 

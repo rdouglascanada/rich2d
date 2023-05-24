@@ -1,6 +1,6 @@
 from game import Game
 from models import Model
-from elements import FlashingText
+from elements.animated_text import FlashingText
 from sprites import Text
 
 flashing_text = Text(rect=(100, 100, 300, 50), text="Some flashing text", colour="white", font_size=32)

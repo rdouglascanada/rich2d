@@ -1,7 +1,7 @@
 from game import Game, GameConfig
 from models import Model, Button, ModelGroup, StateModel
-from state import State
-from sprites import Rectangle, Circle
+from models.state import State
+from sprites.shapes import Rectangle, Circle
 
 game_state = State(value="rectangles")
 

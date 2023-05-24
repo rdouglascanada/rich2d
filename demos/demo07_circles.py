@@ -1,6 +1,6 @@
 from game import Game
 from models import Model
-from sprites import Circle
+from sprites.shapes import Circle
 
 green_circle = Circle(rect=(100, 100, 200, 200), colour="green")
 red_oval = Circle(rect=(400, 100, 150, 200), colour="red")

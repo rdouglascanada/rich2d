@@ -1,6 +1,6 @@
 from game import Game
 from models import Model
-from sprites import Polygon
+from sprites.shapes import Polygon
 
 
 green_triangle = Polygon(rect=(50, 50, 100, 100), colour="green", points=((0, 1), (0.5, 0), (1, 1)))

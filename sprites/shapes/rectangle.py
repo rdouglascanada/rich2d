@@ -1,5 +1,5 @@
 import pygame
-from .sprite import Sprite
+from sprites.sprite import Sprite
 
 
 class Rectangle(Sprite):
