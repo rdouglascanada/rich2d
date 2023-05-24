@@ -33,7 +33,9 @@ class Button(Model):
         button_rectangle = Rectangle(rect=self._rect, colour=self._colour)
         button_text = Text(rect=self._rect, text=self._text, colour=self._font_colour,
                            font=font, font_name=font_name, font_size=font_size,
-                           font_bold=font_bold, font_italic=font_italic)
+                           font_bold=font_bold, font_italic=font_italic,
+                           horizontal_alignment=Text.HorizontalAlignment.CENTRE,
+                           vertical_alignment=Text.VerticalAlignment.MIDDLE)
         button_handler = MouseHandler(rect=self._rect,
                                       on_left_mouse_click=self._on_left_mouse_click,
                                       on_right_mouse_click=self._on_right_mouse_click)

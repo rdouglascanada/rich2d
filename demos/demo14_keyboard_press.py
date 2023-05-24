@@ -27,8 +27,10 @@ flashing_text = FlashingText(text_sprite=spacebar_text, flashes_per_interval=3, 
 title_handler = KeyboardHandler(key_pressed_map={pygame.K_SPACE: start_game})
 title_model = Model(sprites=[title_text, spacebar_text], elements=[flashing_text], handlers=[title_handler])
 
-game_return_text = Text(rect=(0, 500, 800, 100),
-                        text="Press enter to go back to title", colour="black", font_size=32)
+game_return_text = Text(rect=(0, 0, 775, 100),
+                        text="Press enter to go back to title", colour="black", font_name="calibri",
+                        font_size=32, font_bold=True,
+                        horizontal_alignment=Text.HorizontalAlignment.RIGHT)
 game_handler = KeyboardHandler(key_pressed_map={pygame.K_RETURN: back_to_title})
 game_model = Model(sprites=[game_return_text], handlers=[game_handler])
 
