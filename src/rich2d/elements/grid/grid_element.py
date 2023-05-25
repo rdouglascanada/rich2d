@@ -1,4 +1,4 @@
-from elements.element import Element
+from rich2d.elements.element import Element
 from .grid_tiles import GridTiles
 
 

@@ -1,4 +1,4 @@
-from game import Game, GameConfig
+from rich2d.game import Game, GameConfig
 
 title_config = GameConfig(window_title="Extremely Fun Game with a Great Title")
 title_game = Game(config=title_config)

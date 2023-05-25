@@ -1,7 +1,7 @@
-from game import Game
-from models import Model
-from elements.animated_text import FlashingText
-from sprites import Text
+from rich2d.game import Game
+from rich2d.models import Model
+from rich2d.elements.animated_text import FlashingText
+from rich2d.sprites import Text
 
 flashing_text = Text(rect=(100, 100, 500, 50), text="Some flashing text", colour="white", font_size=32)
 flashing_text_model = FlashingText(text_sprite=flashing_text)

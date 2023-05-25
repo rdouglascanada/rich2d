@@ -1,5 +1,5 @@
 import pygame
-from sprites.sprite import Sprite
+from rich2d.sprites.sprite import Sprite
 
 
 class Polygon(Sprite):

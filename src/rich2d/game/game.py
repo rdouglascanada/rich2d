@@ -1,6 +1,6 @@
 import pygame
 from .game_config import GameConfig
-from models import Model
+from rich2d.models import Model
 
 
 class Game:

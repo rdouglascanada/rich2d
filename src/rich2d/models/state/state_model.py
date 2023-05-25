@@ -1,4 +1,4 @@
-from models.model import Model
+from rich2d.models.model import Model
 
 
 class StateModel(Model):

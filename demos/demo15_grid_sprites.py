@@ -1,7 +1,7 @@
-from game import Game, GameConfig
-from models import Model
-from sprites.shapes import Rectangle, Circle, Polygon
-from elements.grid import Grid, GridElement
+from rich2d.game import Game, GameConfig
+from rich2d.models import Model
+from rich2d.sprites import Rectangle, Circle, Polygon
+from rich2d.elements import Grid, GridElement
 
 grid = Grid(rect=(0, 0, 800, 600), rows=6, columns=8)
 

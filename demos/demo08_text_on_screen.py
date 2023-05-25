@@ -1,6 +1,6 @@
-from game import Game
-from models import Model
-from sprites import Text
+from rich2d.game import Game
+from rich2d.models import Model
+from rich2d.sprites import Text
 
 white_text = Text(rect=(100, 100, 300, 50), text="Some simple text", colour="white", font_size=32,
                   horizontal_alignment=Text.HorizontalAlignment.LEFT)

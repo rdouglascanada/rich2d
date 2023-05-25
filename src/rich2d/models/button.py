@@ -1,9 +1,9 @@
 import pygame
 from .model import Model
-from sprites.shapes import Rectangle
-from sprites import Text
-from handlers import MouseHandler
-from elements import Element
+from rich2d.sprites.shapes import Rectangle
+from rich2d.sprites import Text
+from rich2d.handlers import MouseHandler
+from rich2d.elements import Element
 
 
 class Button(Model):

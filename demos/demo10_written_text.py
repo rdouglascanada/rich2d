@@ -1,7 +1,7 @@
-from game import Game
-from models import Model
-from elements.animated_text import WrittenText
-from sprites import Text
+from rich2d.game import Game
+from rich2d.models import Model
+from rich2d.elements.animated_text import WrittenText
+from rich2d.sprites import Text
 
 written_text = Text(rect=(100, 100, 500, 50), text="Some written text", colour="white", font_size=32,
                     horizontal_alignment=Text.HorizontalAlignment.LEFT)

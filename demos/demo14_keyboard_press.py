@@ -1,10 +1,10 @@
 import pygame
-from game import Game, GameConfig
-from models import Model, StateModel
-from models.state import State
-from sprites import Text
-from handlers import KeyboardHandler
-from elements.animated_text import FlashingText
+from rich2d.game import Game, GameConfig
+from rich2d.models import Model
+from rich2d.models.state import State, StateModel
+from rich2d.sprites import Text
+from rich2d.handlers import KeyboardHandler
+from rich2d.elements.animated_text import FlashingText
 
 game_state = State(value="title")
 

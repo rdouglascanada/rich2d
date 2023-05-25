@@ -1,5 +1,5 @@
 import time
-from elements.element import Element
+from rich2d.elements.element import Element
 
 
 class WrittenText(Element):

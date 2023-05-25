@@ -1,6 +1,6 @@
-from game import Game
-from models import Model, Button, ModelGroup
-from sprites import Text
+from rich2d.game import Game
+from rich2d.models import Model, Button, ModelGroup
+from rich2d.sprites import Text
 
 left_text_sprite = Text(rect=(100, 100, 300, 50), text="Some text", colour="white", font_size=32)
 right_text_sprite = Text(rect=(100, 200, 300, 50), text="Some other text", colour="white", font_size=32)
