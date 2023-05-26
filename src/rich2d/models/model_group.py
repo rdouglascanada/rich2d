@@ -3,14 +3,23 @@ from .model import Model
 
 class ModelGroup(Model):
     def __init__(self, models=[]):
-        elements = tuple()
-        sprites = tuple()
-        handlers = tuple()
-
-        for model in models:
-            elements += tuple(model.get_elements())
-            sprites += tuple(model.get_sprites())
-            handlers += tuple(model.get_handlers())
-
-        super().__init__(elements=elements, sprites=sprites, handlers=handlers)
+        self._models = models
         return
+
+    def get_sprites(self):
+        sprites = tuple()
+        for model in self._models:
+            sprites += tuple(model.get_sprites())
+        return sprites
+
+    def get_elements(self):
+        elements = tuple()
+        for model in self._models:
+            elements += tuple(model.get_elements())
+        return elements
+
+    def get_handlers(self):
+        handlers = tuple()
+        for model in self._models:
+            handlers += tuple(model.get_handlers())
+        return handlers
