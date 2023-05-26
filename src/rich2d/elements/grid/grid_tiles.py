@@ -7,7 +7,7 @@ class GridTiles:
             y_tiles = values[3]
         else:
             x_index = values.get_x_index()
-            y_index = values.get_y_index,
+            y_index = values.get_y_index(),
             x_tiles = values.get_x_tiles()
             y_tiles = values.get_y_tiles()
 
