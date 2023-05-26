@@ -18,3 +18,9 @@ class Grid:
         w = grid_tiles.get_x_tiles() * tile_w
         h = grid_tiles.get_y_tiles() * tile_h
         return pygame.Rect(x, y, w, h)
+
+    def get_rows(self):
+        return self._rows
+
+    def get_columns(self):
+        return self._columns
