@@ -1,6 +1,6 @@
 from rich2d.game import Game
 from rich2d.models import Model
-from rich2d.sprites import Circle
+from rich2d.sprites.shapes import Circle
 
 green_circle = Circle(rect=(100, 100, 200, 200), colour="green")
 red_oval = Circle(rect=(400, 100, 150, 200), colour="red")

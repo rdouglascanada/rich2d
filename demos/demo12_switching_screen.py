@@ -1,7 +1,7 @@
 from rich2d.game import Game, GameConfig
 from rich2d.models import Model, Button, ModelGroup
 from rich2d.models.state import State, StateModel
-from rich2d.sprites import Rectangle, Circle
+from rich2d.sprites.shapes import Rectangle, Circle
 
 game_state = State(value="rectangles")
 

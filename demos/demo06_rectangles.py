@@ -1,6 +1,6 @@
 from rich2d.game import Game, GameConfig
 from rich2d.models import Model
-from rich2d.sprites import Rectangle
+from rich2d.sprites.shapes import Rectangle
 
 background_rectangle = Rectangle(rect=(0, 0, GameConfig.DEFAULT_WINDOW_WIDTH, GameConfig.DEFAULT_WINDOW_HEIGHT),
                                  colour="yellow")

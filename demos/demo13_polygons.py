@@ -1,6 +1,6 @@
 from rich2d.game import Game
 from rich2d.models import Model
-from rich2d.sprites import Polygon
+from rich2d.sprites.shapes import Polygon
 
 
 green_triangle = Polygon(rect=(50, 50, 100, 100), colour="green", points=((0, 1), (0.5, 0), (1, 1)))

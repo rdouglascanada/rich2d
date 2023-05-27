@@ -8,6 +8,8 @@ and run the following command
 `python -m pip install -e .`
 
 To validate that the installation worked correctly,
-run the following import from a Python script
+run the following from your console
 
-`import rich2d`
+`python -c "import rich2d" `
+
+If there are no errors, then the installation was successful
