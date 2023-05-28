@@ -1,6 +1,6 @@
 import pygame
 from enum import Enum
-from .sprite import Sprite
+from rich2d.sprites.sprite import Sprite
 
 
 class Text(Sprite):
