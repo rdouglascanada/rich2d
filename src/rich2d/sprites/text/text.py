@@ -18,10 +18,11 @@ class Text(Sprite):
         MIDDLE = 2
         BOTTOM = 3
 
-    def __init__(self, rect=None, text="", colour=None,
+    def __init__(self, text="", colour=None,
                  font=None, font_name=None, font_size=None, font_bold=False, font_italic=False,
-                 horizontal_alignment=HorizontalAlignment.CENTRE, vertical_alignment=VerticalAlignment.MIDDLE):
-        super().__init__(rect=rect)
+                 horizontal_alignment=HorizontalAlignment.CENTRE, vertical_alignment=VerticalAlignment.MIDDLE,
+                 **kwargs):
+        super().__init__(**kwargs)
         if not pygame.font.get_init():
             pygame.font.init()
         if font is not None:
