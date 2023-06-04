@@ -22,7 +22,7 @@ class ImageSheet:
         rect_h = y_tiles * self._image_height
         rect = pygame.Rect(rect_x, rect_y, rect_w, rect_h)
 
-        surface = pygame.Surface(rect.size)
+        surface = pygame.Surface(rect.size, pygame.SRCALPHA)
         surface.blit(self._sheet, (0, 0), rect)
         return Image(value=surface)
 
