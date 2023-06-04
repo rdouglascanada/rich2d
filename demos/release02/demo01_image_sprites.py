@@ -2,9 +2,9 @@ from rich2d.game import Game, GameConfig
 from rich2d.models import Model
 from rich2d.sprites.images import Image, ImageSprite
 
-tux_image = Image("resources/demo01/tux.png")
-windows_image = Image("resources/demo01/windows.png")
-apple_image = Image("resources/demo01/apple.png")
+tux_image = Image.load_from_file("resources/demo01/tux.png")
+windows_image = Image.load_from_file("resources/demo01/windows.png")
+apple_image = Image.load_from_file("resources/demo01/apple.png")
 
 small_image_sprite = ImageSprite(image=tux_image, rect=(50, 50, 100, 100))
 medium_image_sprite = ImageSprite(image=tux_image, rect=(200, 50, 200, 300))
