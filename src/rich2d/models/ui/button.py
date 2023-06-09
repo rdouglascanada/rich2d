@@ -1,5 +1,5 @@
 import pygame
-from .model import Model
+from rich2d.models.model import Model
 from rich2d.sprites.shapes import Rectangle
 from rich2d.sprites import Text
 from rich2d.handlers import MouseHandler
