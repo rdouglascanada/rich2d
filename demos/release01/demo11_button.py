@@ -19,7 +19,7 @@ def toggle_text_handler(text_sprite):
 
 
 button_text = "Left/Right Click to Show/Hide Text"
-button = Button(rect=(100, 400, 500, 100), colour="gray", text=button_text,
+button = Button(rect=(100, 400, 500, 100), text=button_text,
                 on_left_mouse_click=toggle_text_handler(left_text_sprite),
                 on_right_mouse_click=toggle_text_handler(right_text_sprite))
 text_model = Model(sprites=[left_text_sprite, right_text_sprite])
