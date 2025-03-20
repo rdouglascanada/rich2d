@@ -29,13 +29,21 @@ class Pile:
         self._pile_entries.remove(pile_entry)
         return
 
-    def remove_after(self, pile_entry):
+    def remove_after_and_including(self, pile_entry):
         if pile_entry not in self._pile_entries:
             raise RuntimeError("Pile.remove_after pile_entry not in Pile")
         entry_index = self._pile_entries.index(pile_entry)
         removed_entries = self._pile_entries[entry_index:]
         self._pile_entries = self._pile_entries[:entry_index]
         return tuple(removed_entries)
+
+    def remove_all(self):
+        removed_entries = tuple(self._pile_entries)
+        self._pile_entries = []
+        return tuple(removed_entries)
+
+    def is_empty(self):
+        return len(self._pile_entries) == 0
 
 
 

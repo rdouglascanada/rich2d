@@ -1,1 +1,3 @@
 /src/rich2d.egg-info/
+/.idea
+*.pyc
