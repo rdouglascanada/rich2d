@@ -13,8 +13,21 @@ class PileElement(Element):
         if pile is None:
             raise RuntimeError("PileElement pile cannot be None")
         self._pile = pile
-        self._direction = direction
-        self._spacing = spacing
+
+        self._disp_x = 0
+        self._disp_y = 0
+        if spacing == 0:
+            pass
+        elif direction == PileElement.PileElementDirection.DOWN:
+            self._disp_y = spacing
+        elif direction == PileElement.PileElementDirection.UP:
+            self._disp_y = -spacing
+        elif direction == PileElement.PileElementDirection.LEFT:
+            self._disp_x= -spacing
+        elif direction == PileElement.PileElementDirection.RIGHT:
+            self._disp_x = spacing
+        else:
+            raise RuntimeError("PileElement unexpected value for direction")
 
         def update_rects():
             pile_entries = self._pile.get_entries()
@@ -29,8 +42,7 @@ class PileElement(Element):
 
             while i < len(pile_entries):
                 entry_rect = pile_entries[i].get_rect()
-                disp_x, disp_y = self.compute_displacement(self._spacing, self._direction)
-                new_rect_values = (previous_entry_rect.x + disp_x, previous_entry_rect.y + disp_y,
+                new_rect_values = (previous_entry_rect.x + self._disp_x, previous_entry_rect.y + self._disp_y,
                                    previous_entry_rect.w, previous_entry_rect.h)
                 entry_rect.update(new_rect_values)
                 previous_entry_rect = entry_rect
@@ -43,22 +55,3 @@ class PileElement(Element):
 
     def get_pile(self):
         return self._pile
-
-    def compute_displacement(self, spacing, direction):
-        disp_x = 0
-        disp_y = 0
-
-        if spacing == 0:
-            pass
-        elif direction == PileElement.PileElementDirection.DOWN:
-            disp_y = spacing
-        elif direction == PileElement.PileElementDirection.UP:
-            disp_y = -spacing
-        elif direction == PileElement.PileElementDirection.LEFT:
-            disp_x = -spacing
-        elif direction == PileElement.PileElementDirection.RIGHT:
-            disp_x = spacing
-        else:
-            raise RuntimeError("PileElement.compute_displacement unexpected value for direction")
-        return disp_x, disp_y
-

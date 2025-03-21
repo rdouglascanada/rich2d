@@ -9,6 +9,15 @@ class Pile:
         self._pile_entries = list(pile_entries)
         return
 
+    def __len__(self):
+        return len(self._pile_entries)
+
+    def __iter__(self):
+        return iter(self._pile_entries)
+
+    def __contains__(self, item):
+        return item in self._pile_entries
+
     def get_rect(self):
         return self._rect
 
@@ -20,18 +29,12 @@ class Pile:
         return
 
     def add_all(self, pile_entries):
-        self._pile_entries += pile_entries
+        self._pile_entries += list(pile_entries)
         return
 
     def remove(self, pile_entry):
         if pile_entry not in self._pile_entries:
             raise RuntimeError("Pile.remove pile_entry not in Pile")
-        self._pile_entries.remove(pile_entry)
-        return
-
-    def remove_after_and_including(self, pile_entry):
-        if pile_entry not in self._pile_entries:
-            raise RuntimeError("Pile.remove_after pile_entry not in Pile")
         entry_index = self._pile_entries.index(pile_entry)
         removed_entries = self._pile_entries[entry_index:]
         self._pile_entries = self._pile_entries[:entry_index]
