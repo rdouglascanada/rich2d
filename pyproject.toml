@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "rich2d"
-version = "1.0.0"
+version = "2.0.0"
 description = "A game engine for 2D Games written in Python"
 readme = "README.md"
 authors = [{ name = "rdouglascanada", email = "rdouglascanada@gmail.com" }]
