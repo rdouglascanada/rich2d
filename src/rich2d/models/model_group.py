@@ -3,6 +3,7 @@ from .model import Model
 
 class ModelGroup(Model):
     def __init__(self, models=[]):
+        super().__init__()
         self._models = models
         return
 

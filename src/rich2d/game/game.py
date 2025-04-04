@@ -34,7 +34,7 @@ class Game:
             for element in model.get_elements():
                 element.update()
             for sprite in model.get_sprites():
-                sprite.draw(screen)
+                sprite.draw_if_visible(screen)
             pygame.display.flip()
             clock.tick(config.get_frame_rate())
 
