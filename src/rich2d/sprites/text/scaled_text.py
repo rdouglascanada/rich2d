@@ -27,6 +27,8 @@ class ScaledText(Sprite):
         return
 
     def draw(self, screen):
+        if self._text == "":
+            return
         font_surface = self._font.render(self._text, False, self._colour)
         font_surface = pygame.transform.scale(font_surface, (self.get_rect().width, self.get_rect().height))
         screen.blit(font_surface, self.get_rect())

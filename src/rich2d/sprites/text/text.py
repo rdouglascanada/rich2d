@@ -42,6 +42,8 @@ class Text(Sprite):
         return
 
     def draw(self, screen):
+        if self._text == "":
+            return
         text_width, text_height = self._font.size(self._text)
         font_surface = self._font.render(self._text, False, self._colour)
 
